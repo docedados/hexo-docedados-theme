@@ -4,11 +4,13 @@
     <% var show_posts = page.posts.sort(field_sort, 'desc').limit(theme.archive.post_per_page || 5) %>
     <% show_posts.each(function(post) { %>
       <% const tags = post.tags.toArray().map((item) => { return item.name; }); %>
+      <li>
       <% if (post.tags && tags.includes('miniblog')) { %>
         <%- partial('_partial/miniblog-post', { post: post }) %>
       <% } else { %>
         <%- partial('_partial/post', { post: post }) %>
       <% } %>
+      </li>
     <% }); %>
   </ul>
 
