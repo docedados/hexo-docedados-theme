@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
 <meta name="viewport"
-  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <% if (config.author) { %><meta name="author" content="<%- config.author %>"><%
 } %>
@@ -52,12 +52,9 @@ title = 'Etiquetado como: ' + page.tag;
 <% } %>
 
 <%# video %>
-<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+<script src="https://cdn.plyr.io/3.8.4/plyr.js"></script>
+<link rel="stylesheet" href="https://cdn.plyr.io/3.8.4/plyr.css" />
 
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"
-  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-  crossorigin="anonymous"></script>
 <script type="text/javascript" src="<%- url_for('js/scroll.js') %>"></script>
 <script type="text/javascript" src="<%- url_for('js/hamburger.js') %>"></script>
 
