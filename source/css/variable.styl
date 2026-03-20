@@ -1,67 +1,78 @@
+/** CSS Custom Properties **/
 
+:root
+  --bg-color #fffbf8
+  --bg-img url("/images/background.jpg")
+  --font-color #363636
+  --font-secondary-color #767676
+  --emphasis-color #f32370
+  --link-color #363636
+  --link-hover-color #f32370
+  --navbar-active-color #161209
+  --post-link-color #ff6699
+  --post-link-hover-color #ff276f
+  --post-link-marker-color #0d0d0d
+  --post-link-marker-hover-color ffe5ee
+  --pagination-link-color #2d96bd
+  --pagination-link-active-color #000
+  --border-color #e8e8e8
+  --code-font-color #c7254e
+  --code-bg-color #f8f5ec
+  --table-header-bg #fbbdd4
+  --panel-bg #ffffff
+  --panel-text-color #363636
+  --paginator-color #bfbfbf
+  --scrollbar-color #eee
+  --gutter-color #d0d0d0
+  --toc-link-color #999
+  --error-border-color #a7a7a7
+  --timeline-border-color #e2e8f0
+  --timeline-badge-color #2d1b2e
+  --timeline-badge-bg #e1e1e1
+  --timeline-line-color #161209
+  --timeline-circle-bg #fff
+  --timeline-date-color #a9a9b3
 
-$background-color = #fffbf8
-$background-img = "/images/background.jpg"
+/** Stylus variables mapped to custom properties **/
 
-// margin in either side of the page
+$background-color = var(--bg-color)
+$background-img = var(--bg-img)
+
 $margin-wide = 20%
 
-// colors
-$font-color = #363636
-$font-secondary-color = #767676
-$emphasis-color = #f32370
+$font-color = var(--font-color)
+$font-secondary-color = var(--font-secondary-color)
+$emphasis-color = var(--emphasis-color)
 
-// fonts
 $basic-font-family = eb-garamond
 $alternate-font-family = noto-sans,source-sans-pro, sans-serif
 $title-font-family = pirata-one
 $header-font-family = montserrat
 
-
-// header
 $header-height = 80px
 $header-logo-size = 120px
 $header-logo-size-small = 55px
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 $header-background = "/images/background-header.gif"
 
+$global-link-color = var(--link-color)
+$global-link-hover-color = var(--link-hover-color)
 
-// $background-color = #fff
+$navbar-active-color = var(--navbar-active-color)
 
+$post-link-color = var(--post-link-color)
+$post-link-hover-color = var(--post-link-hover-color)
+$post-link-color-with-marker = var(--post-link-marker-color)
+$post-link-hover-color-with-marker = var(--post-link-marker-hover-color)
 
+$pagination-link-color = var(--pagination-link-color)
+$pagination-link-active-color = var(--pagination-link-active-color)
 
-$global-link-color = $font-color
-$global-link-hover-color = #f32370
+$border-color = var(--border-color)
 
-$navbar-active-color = #161209
+$code-font-color = var(--code-font-color)
+$code-background-color = var(--code-bg-color)
 
-$post-link-color = #ff6699
-$post-link-hover-color = #ff276f
-$post-link-color-with-marker = #0d0d0d
-$post-link-hover-color-with-marker = "ffe5ee"
-
-$pagination-link-color = #2d96bd
-$pagination-link-active-color = #000
-
-$border-color = #e8e8e8
-
-$code-font-color = #c7254e
-$code-background-color = #f8f5ec
-
-$post-blockquote-border-color = $global-link-hover-color
-$post-blockquote-background-color = lighten($global-link-hover-color,90%)
-
-$post-table-background-color = lighten($global-link-hover-color,70%)
+$post-blockquote-border-color = var(--link-hover-color)
+$post-blockquote-background-color = var(--bg-color)
+$post-table-background-color = var(--table-header-bg)
