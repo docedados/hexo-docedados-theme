@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.header-nav');
 
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('is-active');
+    const isActive = hamburger.classList.toggle('is-active');
     nav.classList.toggle('is-active');
+    hamburger.setAttribute('aria-expanded', isActive);
   });
 });
