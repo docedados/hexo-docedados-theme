@@ -2,7 +2,7 @@
   <a href="<%- url_for(post.path) %>"><%= post.title %></a>
 </section>
 <section class="post-meta">
-  Publicado por <%= post.author ? post.author : 'alguien' %>, el
+  Publicado por <a href="<%= config.authors[post.author || config.author] ? config.authors[post.author || config.author].url : '/' %>"><%= post.author ? post.author : config.author %></a>, el
   <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%=
     date(post.date, theme.date_format) %></time>
   <% if (theme.show_updated && post.date !== post.updated) { %>
