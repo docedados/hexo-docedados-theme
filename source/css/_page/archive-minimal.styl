@@ -1,11 +1,14 @@
 .post-list-minimal
-  font-family: $basic-font-family
+  font-family: $header-font-family
   margin-top 1em
 
   .post-minimal
     border-bottom 1px grey dashed
     line-height: 3em;
-    height: 3em;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1em;
 
     .post-title
       display: inline-block;
@@ -13,11 +16,27 @@
       overflow: hidden;
       white-space: nowrap;
       font-size 1.2em
-      margin-bottom: 20px
-      max-width: 60%;
       text-overflow: ellipsis;
+      min-width: 0;
 
     .post-date
-      float right
       text-align right
       color $font-secondary-color
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-size: 0.9em;
+
+/* mobile */
+@media screen and (max-width: 479px)
+  .post-list-minimal
+    .post-minimal
+      flex-direction: column;
+      line-height: 1.5em;
+      padding: 0.8em 0;
+
+      .post-title
+        white-space: normal;
+        font-size: 1.1em;
+
+      .post-date
+        font-size: 0.85em;
