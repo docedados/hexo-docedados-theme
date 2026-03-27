@@ -44,6 +44,34 @@ title = 'Etiquetado como: ' + page.tag;
 <link rel="manifest" href="/icons/site.webmanifest">
 <% } %>
 
+<%# Open Graph %>
+<%
+var ogImage = '';
+if (is_post() || is_page()) {
+  var imgMatch = (page.content || '').match(/<img[^>]+src=["']([^"']+)["']/);
+  if (imgMatch) {
+    ogImage = imgMatch[1];
+    if (ogImage.startsWith('http')) {
+      // already absolute
+    } else if (ogImage.startsWith('/')) {
+      ogImage = config.url + ogImage;
+    } else {
+      var basePath = url_for(page.path).replace(/[^/]*$/, '');
+      ogImage = config.url + basePath + ogImage.replace(/^\.\//, '');
+    }
+  }
+}
+if (!ogImage) ogImage = config.url + '/icons/apple-touch-icon.png';
+%>
+<meta property="og:type" content="<%= is_post() ? 'article' : 'website' %>">
+<meta property="og:title" content="<%= title ? config.title + ' | ' + title : config.title %>">
+<% if (description) { %>
+<meta property="og:description" content="<%- description.replace(/"/g, '&quot;') %>">
+<% } %>
+<meta property="og:url" content="<%- page.permalink || config.url %>">
+<meta property="og:site_name" content="<%= config.title %>">
+<meta property="og:image" content="<%- ogImage %>">
+
 <%# css list %>
 <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
 <!-- stylesheets list from _config.yml -->
