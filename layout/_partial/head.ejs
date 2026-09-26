@@ -44,6 +44,10 @@ title = 'Etiquetado como: ' + page.tag;
 <link rel="manifest" href="/icons/site.webmanifest">
 <% } %>
 
+<% if (!is_page() && (is_archive() || is_tag() || is_category() || page.current > 1)) { %>
+<meta name="robots" content="noindex">
+<% } %>
+
 <%# Open Graph %>
 <%
 var ogImage = '';
